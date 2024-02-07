@@ -1,0 +1,21 @@
+name: Run tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  for-trigger:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Set name image'
+        shell: bash
+        run: |
+          echo "Trigger my test BRO!"
+  
+      - name: Trigger UI Test Workflow
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
+          repository: vladimirovES/ui-selenium-tests
+          event-type: trigger-run-test
