@@ -1,14 +1,14 @@
-name: Run tests
+name: Trigger
 
 on:
   workflow_dispatch:
 
 jobs:
   for-trigger:
-    name: Run tests
+    name: Some Print
     runs-on: ubuntu-latest
     steps:
-      - name: 'Set name image'
+      - name: 'Trigerast'
         shell: bash
         run: |
           echo "Trigger my test BRO!"
